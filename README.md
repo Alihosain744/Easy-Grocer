@@ -57,7 +57,7 @@ since this is a retail shop, it doesn't support enhanced payment methods that ar
 
 # gitHub repo link
 
-https://github.com/Alihosain744/WorldWise.git
+https://github.com/Alihosain744/Easy-Grocer.git
 
 # Timeline
 
