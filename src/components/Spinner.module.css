@@ -1,0 +1,41 @@
+.spinnerContainer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  /*
+  conic-gradient: creates a  gradient like a pie chart
+  here first 10% of the background is #0000  and the rest is --color-light-2
+  */
+  background: conic-gradient(#0000 10%, var(--color-dark--2));
+  /*
+  Mask property is used to hide some part of an element
+  as here in the below line of code it mask a radial gradient.
+  so farthest-side means the gradient spread up to farthest edge of the element
+  the radial gradient works as the first given color is the color where the gradient is start from,
+  and the next color is placed after first color,
+
+  so here #0000 it is a trasparent color, #000 black and alpha is 0 so it is transparent,
+  calc(100% -8px) so it creates a gradient, which the center is transparent up to almost the edge
+  but it minuses 8 pixels, so from center to the edge - 8 pixels is transparent and then after that point,
+  the rest is black, #000 ---> means black, 0 means start from the point where the last color was ended which 
+  was transparent,
+
+  which in turn is used by mask property, so it creates a ring,
+  */
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+
+  animation: rotate 1.5s infinite linear;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}

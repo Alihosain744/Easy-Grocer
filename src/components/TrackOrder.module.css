@@ -1,0 +1,85 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.phoneForm {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  background-color: #fff;
+  max-width: 47%;
+  width: 100%;
+  order: 1;
+}
+.phoneForm input[type="tel"] {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #000;
+}
+.col {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+}
+.phoneSubmit {
+  max-width: 50%;
+  width: 30%;
+  grid-column-start: 2;
+  margin: 5px auto;
+  margin-top: 20px;
+  padding: 7px 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  background: var(--color-brand--2);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.phoneSubmit:hover {
+  transform: scale(1.1);
+}
+.phoneSubmit:active {
+  transform: scale(1.2);
+}
+.honeLink {
+  background: var(--color-brand--2);
+  padding: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  font-size: small;
+  margin-top: 10px;
+}
+
+.error {
+  color: #f00;
+  grid-column: 2;
+}
+@media screen and (max-width: 900px) {
+  .col {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .phoneForm {
+    max-width: 55%;
+    width: 100%;
+  }
+
+  .phoneSubmit {
+    max-width: 90%;
+    width: 100%;
+    grid-column: span 1;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .phoneForm {
+    max-width: 60%;
+    width: 100%;
+  }
+}

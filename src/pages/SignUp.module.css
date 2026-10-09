@@ -1,0 +1,91 @@
+.signupContainer {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+}
+
+.nav {
+  background: var(--color-light--3);
+}
+
+.nav a[href="/"] span {
+  color: var(--color-dark--0);
+}
+
+.nav ul li a {
+  color: var(--color-dark--0) !important;
+}
+
+.formSignup {
+  background: #fff;
+  border-radius: 5px;
+  max-width: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: auto auto;
+  padding: 10px;
+}
+.col {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  align-items: center;
+}
+
+.labelRole {
+  display: flex;
+  font-weight: normal;
+  align-items: center;
+}
+
+.roleContainer {
+  display: flex;
+  flex-direction: column;
+}
+.col input {
+  border-radius: 0%;
+  border-bottom: 1px solid black;
+}
+.signupBtn {
+  background: var(--color-brand--2);
+  font-weight: bold;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  max-width: 10%;
+  width: 100%;
+  display: grid;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.signupBtn:active {
+  transform: scale(0.9);
+}
+.error {
+  color: #f00;
+  grid-column: 2;
+}
+
+@media screen and (max-width: 800px) {
+  .formSignup {
+    margin: auto auto;
+  }
+  .col {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 5px;
+  }
+  .signupBtn {
+    width: 100%;
+    max-width: 90% !important;
+  }
+}

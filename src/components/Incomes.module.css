@@ -1,0 +1,29 @@
+.action {
+  border: none;
+  outline: none;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: transform 0.4s;
+}
+.action:hover {
+  transform: scale(1.1);
+}
+.action:active {
+  transform: scale(1.2);
+}
+.total {
+  max-width: 50%;
+  font-weight: bold;
+  margin-left: 14px;
+  width: 100%;
+}
+.total_received {
+  display: block;
+  width: 200px;
+  margin-left: 12px;
+  font-weight: bold;
+  font-size: 15px;
+}

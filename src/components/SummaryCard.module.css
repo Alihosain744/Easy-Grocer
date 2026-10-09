@@ -1,0 +1,82 @@
+.summaryWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.summaryContainer {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  padding: 10px;
+  margin-left: 20px;
+}
+.summaryAlign {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+.row_1,
+.row_2,
+.row_3 {
+  display: grid;
+  grid-template-columns: 4fr 4fr;
+}
+
+.btnAdd {
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: bold;
+  outline: none;
+  background: var(--color-brand--2);
+  cursor: pointer;
+  transition: transform 0.3s;
+  text-decoration: none;
+  color: #000;
+  font-size: 12px;
+}
+.btnAdd:active {
+  transform: scale(1.1);
+  text-decoration: none;
+  color: #000;
+}
+.table {
+  margin-left: 14px;
+  margin-right: 10px;
+  padding: 5px;
+  background: var(--color-dark--2);
+  color: var(--color-light--3);
+  overflow: auto;
+}
+
+.table tr td {
+  text-align: center;
+}
+.table tr:hover {
+  background: var(--color-dark--1);
+}
+:global(.msg) {
+  background: var(--color-light--1);
+  padding: 10px;
+}
+.msg {
+  background: var(--color-light--1);
+  padding: 10px;
+}
+
+@media screen and (max-width: 400px) {
+  .summaryContainer {
+    max-width: 95%;
+    width: 100%;
+    margin: 10px auto;
+  }
+  .summaryAlign {
+    display: flex;
+    flex-direction: column;
+  }
+  .btnAdd {
+    max-width: 91%;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

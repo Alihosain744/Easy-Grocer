@@ -1,0 +1,60 @@
+.drawer {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 5px;
+  padding: 10px;
+  /* margin-top: 19px; */
+  /* margin-right: 10px; */
+  background: var(--color-dark--2);
+  color: var(--color-light--3);
+  /* max-width: 25%;
+  width: 100%; */
+
+  /* new styles*/
+  max-width: 25%;
+  min-width: 280px;
+
+  /* new Style */
+
+  flex-shrink: 0;
+  margin: 0;
+}
+.drawerSection {
+  margin: 10px;
+}
+.drawerCloseBtn {
+  cursor: pointer;
+  background: var(--color-brand--2);
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  max-width: 30%;
+  width: 100%;
+  margin-left: 8px;
+  transition: transform 0.3s;
+}
+.drawerCloseBtn:hover {
+  transform: scale(1.1);
+}
+.drawerCloseBtn:active {
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 800px) {
+  .drawer {
+    margin-left: 6px;
+    max-width: 97%;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .drawer {
+    flex: none;
+    width: 100%;
+    max-width: 95%;
+    margin: 0 auto;
+  }
+}

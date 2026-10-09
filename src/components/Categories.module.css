@@ -1,0 +1,142 @@
+.category_container {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  padding-top: 20px;
+  padding-left: 10px;
+  gap: 10px;
+}
+.col_1 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.col_2 {
+  max-width: 70%;
+  width: 100%;
+
+  padding: 10px;
+  padding-top: 40px;
+}
+.control_category {
+  border: none;
+  outline: none;
+  border-radius: 0;
+  background: transparent;
+  border-bottom: 1px solid #000;
+}
+.category_table {
+  padding: 5px;
+
+  background: var(--color-dark--2);
+  color: var(--color-light--3);
+  text-align: center;
+  max-width: 100%;
+  width: 100%;
+  font-size: 12px;
+}
+.category_table tr:hover {
+  background: var(--color-dark--1);
+}
+.action {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+.action_btn {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  transition: transform 0.3s;
+}
+.add_category_btn {
+  background: var(--color-brand--2);
+  max-width: 30%;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.col_second_form_add_category {
+  display: flex;
+  justify-content: center;
+}
+.add_category {
+  max-width: 20%;
+  width: 100%;
+  background: var(--color-brand--2);
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.action_btn:hover,
+.add_category_btn:hover,
+.add_category:hover {
+  transform: scale(1.1);
+}
+.action_btn:active,
+.add_category_btn:active,
+.add_category:active {
+  transform: scale(1.2);
+}
+.form_add_category {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 10px;
+}
+.form_add_category_heading {
+  text-align: center;
+}
+.col {
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+}
+.msg {
+  background: var(--color-light--3);
+  padding: 20px;
+}
+.error {
+  grid-column: 2;
+  color: #f00;
+}
+@media screen and (max-width: 800px) {
+  .category_container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+  }
+
+  .col_1 {
+    padding: 5px;
+    order: 2;
+  }
+  .add_category_btn {
+    max-width: 90%;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .col_2 {
+    max-width: 100%;
+    width: 100%;
+    order: 1;
+  }
+  .add_category {
+    margin: 0 auto;
+    max-width: 85%;
+    width: 100%;
+    margin-top: 20px;
+  }
+}

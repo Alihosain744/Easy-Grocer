@@ -1,0 +1,79 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.openedNav {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1rem !important;
+  font-size: 5px !important;
+}
+.turnNavVertical {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: end !important;
+}
+.nav a:link,
+.nav a:visited {
+  text-decoration: none;
+
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.cartLink {
+  position: relative;
+}
+.numCartItems {
+  position: absolute;
+  background: var(--color-brand--2);
+  color: #fff;
+  border-radius: 20px;
+  padding: 0 4px;
+
+  font-size: 10px;
+}
+@media screen and (max-width: 600px) {
+  .nav {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .nav ul {
+    display: none;
+  }
+
+  .nav ul li {
+    align-self: end;
+  }
+
+  a.ctaLink:link,
+  a.ctaLink:visited {
+    background-color: var(--color-brand--2);
+    color: var(--color-dark--0);
+    padding: 0.3rem 0.5rem !important;
+    border-radius: 7px;
+  }
+}
+
+/* CSS Modules feature */
+.nav a:global(.active) {
+  color: var(--color-brand--2);
+}
+
+a.ctaLink:link,
+a.ctaLink:visited {
+  background-color: var(--color-brand--2);
+  color: var(--color-dark--0);
+  padding: 0.8rem 2rem;
+  border-radius: 7px;
+}

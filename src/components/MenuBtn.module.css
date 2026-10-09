@@ -1,0 +1,23 @@
+.menuBtn {
+  width: 3rem;
+  align-self: end;
+}
+
+.menuBtn:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 600px) {
+  .menuBtn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .menuBtn {
+    display: block;
+    background: var(--color-dark--1);
+    padding-bottom: 0;
+    border-radius: 3px;
+  }
+}

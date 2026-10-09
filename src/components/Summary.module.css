@@ -1,0 +1,49 @@
+.parentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.summaryContainer {
+  display: flex;
+  margin-top: 10px;
+
+  min-height: 50vh;
+  justify-content: space-between;
+  color: black;
+
+  gap: 50px;
+}
+
+.leftSide {
+  background: #fff;
+  overflow-y: auto;
+  flex: 1;
+  margin-left: 10px;
+}
+
+.rightSide {
+  background: #fff;
+  overflow-y: auto;
+  flex: 1;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.total {
+  margin-left: 14px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 800px) {
+  .summaryContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  .leftSide,
+  .rightSide {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-bottom: 10px;
+  }
+}

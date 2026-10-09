@@ -1,0 +1,16 @@
+.action {
+  border: none;
+  outline: none;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: transform 0.4s;
+}
+.action:hover {
+  transform: scale(1.1);
+}
+.action:active {
+  transform: scale(1.2);
+}
