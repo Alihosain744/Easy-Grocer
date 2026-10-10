@@ -8,8 +8,7 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "server": "json-server --watch ./data/grocery_data.json --fks dummy --port 9000 --delay 500 ",
-    "start": "json-server ./data/grocery_data.json --fks dummy --host 0.0.0.0 --port $PORT"
+    "server": "json-server --watch ./data/grocery_data.json --fks dummy --port 9000 --delay 500 "
   },
   "dependencies": {
     "json-server": "^0.16.3",
