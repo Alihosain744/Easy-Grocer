@@ -4,7 +4,7 @@ Easy Grocery
 
 # Description
 
-this is web application is used to make easy the management of a grocery shop, including of products, loan, expenses, incomes, users, categories management. the grocer had already a hard notebook for management of customers loan which might led to many problems including of unorganized loan data related to different customers, the hard notebook might lost that causes the grocer to lost each customer loan data, Possible of mistakes during calculating each customer loan, doesn't had a daily, monthly and yearly record for incomes and expenses. that this web application addresses all these problems.
+this web application is used to make easy the management of a grocery shop, including of products, loan, expenses, incomes, users, categories management. the grocer had already a hard notebook for management of customers loan which might led to many problems including of unorganized loan data related to different customers, the hard notebook might lost that causes the grocer to lost each customer loan data, Possible of mistakes during calculating each customer loan, doesn't had a daily, monthly and yearly record for incomes and expenses. that this web application addresses all these problems.
 customers can make orders and track order without having to already signed up to application.
 according to grocer neeeds this application support three kind of payment methods including of COD (Cash on Delivery), Pay now and Pay later, which for customers who loans from grocer, the payment method is pay later.
 since this is a retail shop, it doesn't support enhanced payment methods that are currently a bit available in Afghanistan.
