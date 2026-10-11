@@ -1,10 +1,10 @@
 import { useEffect, useContext, useReducer, createContext } from "react";
 import { useAuth } from "./AuthContext";
-import { setDefaultLocale } from "react-datepicker";
 
 const BASE_URL = "http://localhost:9000/cart";
 
 const CartContext = createContext();
+
 const initialState = {
   cartLoading: false,
   cart: [],
@@ -48,10 +48,6 @@ function reducer(state, action) {
         ),
       };
 
-    // work on feature of when adding a newItem if there is already one on the cart
-    // then only increase the quantity
-    // then work on clear all and clear one by one cart Item here it needs to check which user or customer
-    // you want to have a clear cart or one by one
     case "itemadded/localstorage":
       return {
         ...state,
@@ -177,8 +173,6 @@ function CartProvider({ children }) {
             const guestCart = JSON.parse(
               localStorage.getItem("guestCart") ?? "[]"
             );
-            // why it the enriched result does not show the final result instead it shows
-            // promise fullfilled
 
             const enriched = await Promise.all(
               guestCart?.map(async (item) => {
@@ -203,92 +197,6 @@ function CartProvider({ children }) {
     },
     [currentUser]
   );
-
-  // this function will be called when the user for the first time
-  // click at + button on the product list, so here quantity is 1
-  // async function addToCart(item) {
-  //   dispatch({ type: "loading" });
-
-  //   let insertedCartItem;
-  //   try {
-  //     if (currentUser) {
-  //       const existingItemIndex = cart.findIndex((i) => i.id === item.id);
-  //       let updatedCart;
-  //       if (existingItemIndex > -1) {
-  //         updatedCart = cart.map((i, idx) =>
-  //           idx === existingItemIndex ? { ...i, quantity: i.quantity + 1 } : i
-  //         );
-
-  //         dispatch({ type: "item/added", payload: updatedCart });
-  //       } else {
-  //         // if there is actually a user registered at application,
-  //         // then add his cart items to back end
-  //         // insert only necessary data to the back end
-  //         const res = await fetch(`${BASE_URL}`, {
-  //           method: "POST",
-  //           headers: { "Content-Type": "application/json" },
-  //           body: JSON.stringify({
-  //             userId: currentUser.id,
-  //             productId: item.id,
-  //             quantity: 1,
-  //           }),
-  //         });
-  //         if (!res.ok) throw new Error("Trouble while adding item to cart");
-
-  //         insertedCartItem = await res.json();
-  //       }
-
-  //       const prodRes = await fetch(
-  //         `http://localhost:9000/products/${item.id}`
-  //       );
-  //       const product = await prodRes.json();
-  //       // and insert the enriched data to the state, for showing the UI with the related data
-  //       dispatch({
-  //         type: "item/added",
-  //         payload: { ...insertedCartItem, product },
-  //       });
-  //     } else {
-  //       const existingCart = JSON.parse(
-  //         localStorage.getItem("guestCart") || "[]"
-  //       );
-  //       const prodRes = await fetch(
-  //         `http://localhost:9000/products/${item.id}`
-  //       );
-  //       const product = await prodRes.json();
-
-  //       const newItem = { productId: item.id, quantity: 1 };
-
-  //       const enrichNewItem = { ...newItem, product };
-
-  //       // if item already in the cart bump quantity instead of duplicating
-  //       const existingItemIndex = existingCart.findIndex(
-  //         (i) => i.productId === item.id
-  //       );
-  //       let updatedCart;
-
-  //       if (existingItemIndex > -1) {
-  //         updatedCart = existingCart.map((i, idx) =>
-  //           idx === existingItemIndex ? { ...i, quantity: i.quantity + 1 } : i
-  //         );
-  //       } else {
-  //         updatedCart = [...existingCart, newItem];
-  //       }
-  //       // keep local stroage light just enrich  the new cart item with it is related product data
-  //       // in the state for showing the related data  in the UI such as product iamge and etc...
-  //       localStorage.setItem("guestCart", JSON.stringify(updatedCart));
-  //       // same as above insert only necessary data to the localStorage
-  //       // and insert enriched data to the state.
-  //       dispatch({
-  //         type: "itemadded/localstorage",
-  //         payload: enrichNewItem,
-  //       });
-  //     }
-  //   } catch (e) {
-  //     dispatch({ type: "error", payload: e.message });
-  //     throw e;
-  //   }
-  //   return insertedCartItem;
-  // }
 
   async function addToCart(item) {
     dispatch({ type: "loading" });

@@ -1,9 +1,7 @@
-
-
 function useLoanSummary(incomes, orders) {
+  // summary is an object like {2: {customer: "ali",totalPaid:200,totalRemaining:100}}
   const summary = {};
 
-  // summary is an object like {2: {customer: "ali",totalPaid:200,totalRemaining:100}}
   incomes.forEach((income) => {
     const key = income.userId;
 
@@ -22,7 +20,7 @@ function useLoanSummary(incomes, orders) {
   orders.forEach((order) => {
     const key = order.userId;
 
-    // first create a summary object for the related order 
+    // first create a summary object for the related order
     if (!summary[key]) {
       summary[key] = {
         customer: order.customer,
