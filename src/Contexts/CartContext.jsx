@@ -64,7 +64,6 @@ function reducer(state, action) {
       };
 
     case "quantityIncreased/localStorage":
-      console.log("state cart", state.cart);
       return {
         ...state,
         cart: state.cart.map((cartItem) =>

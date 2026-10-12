@@ -131,13 +131,9 @@ function OrderProvider({ children }) {
     }
   }
 
-  async function addOrder(order, customer = null) {
+  async function addOrder(order) {
     dispatch({ type: "loading" });
-    // order.id =
-    // orders?.length === 0 ? 100 : Math.max(...orders?.map((o) => o.id)) + 1;
-    // for the users who already has not been registered to the app
-    // put the userId for them null and then in the ui show them as guest user
-    // see the screen shots at your phone,
+
     let data;
     try {
       const res = await fetch(`${BASE_URL}/orders`, {
@@ -158,7 +154,7 @@ function OrderProvider({ children }) {
     return data;
   }
 
-  async function deleteOrder(id, customer = null) {
+  async function deleteOrder(id) {
     dispatch({ type: "loading" });
 
     try {
@@ -174,7 +170,7 @@ function OrderProvider({ children }) {
     }
   }
 
-  async function editOrder(order, customer = null) {
+  async function editOrder(order) {
     dispatch({ type: "loading" });
     let data;
     try {
@@ -208,7 +204,7 @@ function OrderProvider({ children }) {
 
       const newPaidAmount = Math.max(order.paidAmount + paidIncrement, 0);
       const newRemining = Math.max(order.total - newPaidAmount, 0);
-      // Here if newPaidAmount is greater than order tottal then the result would be negative
+      // Here if newPaidAmount is greater than order total then the result would be negative
       // which is meaning less because paidAmount can't be greater than total, so here for that
       // scenario it sets the newRemaining to 0,
 
